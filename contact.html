@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kinbay - Digital Products Marketplace</title>
-    <meta
-      name="description"
-      content="Buy premium themes, plugins, scripts, and digital assets with secure checkout and instant downloads."
-    />
+    <title>Contact - Kinbay</title>
+    <meta name="description" content="Contact Kinbay support and review frequently asked questions." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +13,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-page="home">
+  <body data-page="contact">
     <aside class="side-menu" id="sideMenu" aria-hidden="true">
       <header class="side-menu-head">
         <h3>Menu</h3>
@@ -76,43 +73,53 @@
     </header>
 
     <main>
-      <section class="hero">
-        <p class="hero-kicker">No.#1 Best Digital Downloads Marketplace</p>
-        <h1>Latest updated WordPress themes, plugins, templates, games, and software apps.</h1>
-        <p class="hero-copy">
-          Build websites and products faster with high quality digital assets and secure instant delivery.
-        </p>
-        <div class="hero-actions">
-          <a class="action-btn" href="products.html">Browse Products</a>
-          <a class="ghost-btn" href="downloads.html">My Downloads</a>
+      <section class="section">
+        <div class="page-head">
+          <h1>Contact Us</h1>
+          <p>Need help before purchase or with your downloads? Reach out to support.</p>
         </div>
-      </section>
 
-      <section class="section" id="featured">
-        <div class="section-head">
-          <h2>Top rated products</h2>
-          <p>Every week we hand-pick some of the best items from our collection.</p>
-        </div>
-        <div class="product-list list-scroll" id="featuredGrid"></div>
-      </section>
+        <div class="split-layout">
+          <form class="panel form-grid" id="contactForm">
+            <label>
+              Full Name
+              <input type="text" name="fullName" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Subject
+              <input type="text" name="subject" required />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="6" required placeholder="How can we help?"></textarea>
+            </label>
+            <button type="submit" class="action-btn">Send Message</button>
+          </form>
 
-      <section class="section" id="recent">
-        <div class="section-head inline-head">
-          <div>
-            <h2>Most recent releases</h2>
-            <p>Freshly updated scripts, plugins, themes, and tools.</p>
+          <div class="panel">
+            <h2>Support Info</h2>
+            <p>Email: support@kinbay.com</p>
+            <p>Response time: within 24 hours</p>
+
+            <h3>FAQ</h3>
+            <details>
+              <summary>How do I access my purchase?</summary>
+              <p>Go to Downloads after checkout and click download for any unlocked product.</p>
+            </details>
+            <details>
+              <summary>Can I redownload purchased files?</summary>
+              <p>Yes, all purchased items stay in your Downloads page while your account is active.</p>
+            </details>
+            <details>
+              <summary>How do refunds work?</summary>
+              <p>Contact support with your order ID and we review within one business day.</p>
+            </details>
           </div>
-          <a class="link-btn" href="products.html">View all products</a>
         </div>
-        <div class="product-grid" id="recentGrid"></div>
-      </section>
-
-      <section class="section" id="sale">
-        <div class="section-head">
-          <h2>On sale products</h2>
-          <p>Grab discounted items and lifetime updates.</p>
-        </div>
-        <div class="product-grid" id="saleGrid"></div>
       </section>
     </main>
 

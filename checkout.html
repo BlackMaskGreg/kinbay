@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kinbay - Digital Products Marketplace</title>
-    <meta
-      name="description"
-      content="Buy premium themes, plugins, scripts, and digital assets with secure checkout and instant downloads."
-    />
+    <title>Checkout - Kinbay</title>
+    <meta name="description" content="Complete your checkout securely on Kinbay." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +13,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-page="home">
+  <body data-page="checkout">
     <aside class="side-menu" id="sideMenu" aria-hidden="true">
       <header class="side-menu-head">
         <h3>Menu</h3>
@@ -76,43 +73,70 @@
     </header>
 
     <main>
-      <section class="hero">
-        <p class="hero-kicker">No.#1 Best Digital Downloads Marketplace</p>
-        <h1>Latest updated WordPress themes, plugins, templates, games, and software apps.</h1>
-        <p class="hero-copy">
-          Build websites and products faster with high quality digital assets and secure instant delivery.
-        </p>
-        <div class="hero-actions">
-          <a class="action-btn" href="products.html">Browse Products</a>
-          <a class="ghost-btn" href="downloads.html">My Downloads</a>
+      <section class="section">
+        <div class="page-head">
+          <h1>Checkout</h1>
+          <p>Fill your billing details and place your order.</p>
         </div>
-      </section>
 
-      <section class="section" id="featured">
-        <div class="section-head">
-          <h2>Top rated products</h2>
-          <p>Every week we hand-pick some of the best items from our collection.</p>
-        </div>
-        <div class="product-list list-scroll" id="featuredGrid"></div>
-      </section>
+        <div class="split-layout">
+          <form class="panel form-grid" id="checkoutPageForm">
+            <h2>Billing Details</h2>
+            <label>
+              Full Name
+              <input type="text" name="fullName" required />
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" required />
+            </label>
+            <label>
+              Country
+              <input type="text" name="country" required placeholder="United States" />
+            </label>
+            <label>
+              Address Line 1
+              <input type="text" name="addressLine1" required placeholder="Street address" />
+            </label>
+            <label>
+              Address Line 2
+              <input type="text" name="addressLine2" placeholder="Apartment, suite, etc" />
+            </label>
+            <div class="field-row">
+              <label>
+                City
+                <input type="text" name="city" required />
+              </label>
+              <label>
+                State
+                <input type="text" name="state" required />
+              </label>
+              <label>
+                ZIP Code
+                <input type="text" name="zipCode" required />
+              </label>
+            </div>
+            <label>
+              Payment Method
+              <select name="paymentMethod" required>
+                <option value="card">Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="crypto">Crypto</option>
+              </select>
+            </label>
+            <button type="submit" class="action-btn full" id="placeOrderButton">Place Order</button>
+          </form>
 
-      <section class="section" id="recent">
-        <div class="section-head inline-head">
-          <div>
-            <h2>Most recent releases</h2>
-            <p>Freshly updated scripts, plugins, themes, and tools.</p>
+          <div class="panel summary-panel">
+            <h2>Order Summary</h2>
+            <div id="checkoutSummary" class="checkout-summary-items"></div>
+            <ul class="summary-list">
+              <li><span>Subtotal</span><strong id="checkoutSubtotal">$0.00</strong></li>
+              <li><span>Tax</span><strong id="checkoutTax">$0.00</strong></li>
+              <li class="summary-total"><span>Total</span><strong id="checkoutTotal">$0.00</strong></li>
+            </ul>
           </div>
-          <a class="link-btn" href="products.html">View all products</a>
         </div>
-        <div class="product-grid" id="recentGrid"></div>
-      </section>
-
-      <section class="section" id="sale">
-        <div class="section-head">
-          <h2>On sale products</h2>
-          <p>Grab discounted items and lifetime updates.</p>
-        </div>
-        <div class="product-grid" id="saleGrid"></div>
       </section>
     </main>
 

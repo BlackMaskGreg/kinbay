@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kinbay - Digital Products Marketplace</title>
-    <meta
-      name="description"
-      content="Buy premium themes, plugins, scripts, and digital assets with secure checkout and instant downloads."
-    />
+    <title>Downloads - Kinbay</title>
+    <meta name="description" content="View your purchased products and order history." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -16,7 +13,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body data-page="home">
+  <body data-page="downloads">
     <aside class="side-menu" id="sideMenu" aria-hidden="true">
       <header class="side-menu-head">
         <h3>Menu</h3>
@@ -76,43 +73,20 @@
     </header>
 
     <main>
-      <section class="hero">
-        <p class="hero-kicker">No.#1 Best Digital Downloads Marketplace</p>
-        <h1>Latest updated WordPress themes, plugins, templates, games, and software apps.</h1>
-        <p class="hero-copy">
-          Build websites and products faster with high quality digital assets and secure instant delivery.
-        </p>
-        <div class="hero-actions">
-          <a class="action-btn" href="products.html">Browse Products</a>
-          <a class="ghost-btn" href="downloads.html">My Downloads</a>
+      <section class="section">
+        <div class="page-head">
+          <h1>My Downloads</h1>
+          <p id="downloadsState">Sign in to view and download your purchased files.</p>
         </div>
+        <div class="product-grid" id="libraryGrid"></div>
       </section>
 
-      <section class="section" id="featured">
+      <section class="section">
         <div class="section-head">
-          <h2>Top rated products</h2>
-          <p>Every week we hand-pick some of the best items from our collection.</p>
+          <h2>Order History</h2>
+          <p>Your recent paid orders.</p>
         </div>
-        <div class="product-list list-scroll" id="featuredGrid"></div>
-      </section>
-
-      <section class="section" id="recent">
-        <div class="section-head inline-head">
-          <div>
-            <h2>Most recent releases</h2>
-            <p>Freshly updated scripts, plugins, themes, and tools.</p>
-          </div>
-          <a class="link-btn" href="products.html">View all products</a>
-        </div>
-        <div class="product-grid" id="recentGrid"></div>
-      </section>
-
-      <section class="section" id="sale">
-        <div class="section-head">
-          <h2>On sale products</h2>
-          <p>Grab discounted items and lifetime updates.</p>
-        </div>
-        <div class="product-grid" id="saleGrid"></div>
+        <div id="ordersGrid" class="orders-grid"></div>
       </section>
     </main>
 
