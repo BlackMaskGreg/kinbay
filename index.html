@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kinnbay | Digital Products & Services</title>
+    <meta
+      name="description"
+      content="Kinnbay is a responsive ecommerce platform for downloadable digital products and professional services like CV writing."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <header class="site-header">
+      <a href="#home" class="brand">kinnbay</a>
+      <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">Menu</button>
+      <nav class="main-nav" id="mainNav">
+        <a href="#products">Products</a>
+        <a href="#library">My Library</a>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQ</a>
+        <button class="cart-button" id="cartButton" aria-label="Open cart">
+          Cart <span id="cartCount">0</span>
+        </button>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero reveal">
+        <p class="eyebrow">Digital First Marketplace</p>
+        <h1>Sell smarter. Download instantly. Hire services in minutes.</h1>
+        <p class="hero-copy">
+          Kinnbay helps creators and professionals exchange value quickly with secure digital downloads
+          and service bookings from one modern storefront.
+        </p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">Shop Digital Products</a>
+          <a href="#services" class="btn btn-outline">Order a Service</a>
+        </div>
+        <div class="stats">
+          <article>
+            <h3>100+</h3>
+            <p>Downloadable assets</p>
+          </article>
+          <article>
+            <h3>24h</h3>
+            <p>Fastest service delivery</p>
+          </article>
+          <article>
+            <h3>4.9/5</h3>
+            <p>Average client rating</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="products reveal" id="products">
+        <div class="section-head">
+          <p class="eyebrow">Store</p>
+          <h2>Digital Product Catalog</h2>
+        </div>
+
+        <div class="filters">
+          <label class="search-wrap" for="searchInput">
+            <span>Search</span>
+            <input type="search" id="searchInput" placeholder="Find templates, guides, kits..." />
+          </label>
+          <div class="categories" id="categoryFilters" aria-label="Product categories"></div>
+        </div>
+
+        <div class="product-grid" id="productGrid"></div>
+      </section>
+
+      <section class="library reveal" id="library">
+        <div class="section-head">
+          <p class="eyebrow">My Downloads</p>
+          <h2>Your Purchased Library</h2>
+        </div>
+        <p class="muted" id="libraryState">
+          Complete checkout to unlock files here for instant downloads.
+        </p>
+        <div class="product-grid" id="libraryGrid"></div>
+      </section>
+
+      <section class="services reveal" id="services">
+        <div class="section-head">
+          <p class="eyebrow">Professional Help</p>
+          <h2>Order Services on Demand</h2>
+        </div>
+        <div class="service-grid" id="serviceGrid"></div>
+      </section>
+
+      <section class="testimonial reveal">
+        <div class="section-head">
+          <p class="eyebrow">Client Voices</p>
+          <h2>What users say about Kinnbay</h2>
+        </div>
+        <article class="testimonial-card" id="testimonialCard">
+          <p id="testimonialQuote"></p>
+          <div class="testimonial-meta">
+            <strong id="testimonialName"></strong>
+            <span id="testimonialRole"></span>
+          </div>
+        </article>
+        <div class="testimonial-controls">
+          <button id="prevTestimonial" class="btn btn-outline">Previous</button>
+          <button id="nextTestimonial" class="btn btn-primary">Next</button>
+        </div>
+      </section>
+
+      <section class="faq reveal" id="faq">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Everything you need to know</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>How do digital downloads work?</summary>
+            <p>
+              After checkout, products are unlocked in your order confirmation. Click download any time
+              in your browser session.
+            </p>
+          </details>
+          <details>
+            <summary>Can I request custom services?</summary>
+            <p>
+              Yes. Use the service order form and include your requirements. We follow up with timelines
+              and milestones.
+            </p>
+          </details>
+          <details>
+            <summary>Are payments one-time?</summary>
+            <p>
+              Yes. All listed products and services on this demo are one-time purchases without recurring
+              billing.
+            </p>
+          </details>
+        </div>
+      </section>
+    </main>
+
+    <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+      <header>
+        <h3>Your Cart</h3>
+        <button class="close" id="closeCart" aria-label="Close cart">x</button>
+      </header>
+      <div id="cartItems" class="cart-items"></div>
+      <footer class="cart-footer">
+        <p>Total: <strong id="cartTotal">$0.00</strong></p>
+        <button class="btn btn-primary full" id="checkoutButton">Proceed to Checkout</button>
+      </footer>
+    </aside>
+
+    <dialog class="modal" id="checkoutModal">
+      <form id="checkoutForm" class="modal-form">
+        <header class="modal-head">
+          <h3>Checkout</h3>
+          <button type="button" class="close" data-close-modal="checkoutModal">x</button>
+        </header>
+        <label>
+          Full Name
+          <input type="text" name="fullName" required />
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" required />
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="terms" required />
+          I agree to the digital goods terms.
+        </label>
+        <button type="submit" class="btn btn-primary full">Complete Purchase</button>
+      </form>
+    </dialog>
+
+    <dialog class="modal" id="serviceModal">
+      <form id="serviceForm" class="modal-form">
+        <header class="modal-head">
+          <h3>Order Service</h3>
+          <button type="button" class="close" data-close-modal="serviceModal">x</button>
+        </header>
+        <label>
+          Service
+          <select id="serviceSelect" name="service" required></select>
+        </label>
+        <label>
+          Package
+          <select name="packageTier" required>
+            <option value="Starter">Starter</option>
+            <option value="Standard">Standard</option>
+            <option value="Premium">Premium</option>
+          </select>
+        </label>
+        <label>
+          Deadline
+          <input type="date" name="deadline" required />
+        </label>
+        <label>
+          Requirements
+          <textarea name="requirements" rows="4" required placeholder="Describe your goals..."></textarea>
+        </label>
+        <button type="submit" class="btn btn-primary full">Submit Order</button>
+      </form>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
